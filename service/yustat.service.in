@@ -1,0 +1,11 @@
+[Unit]
+Description=One-line Status Service
+
+[Service]
+Type=simple
+ExecStart=@BINDIR@/yustat -o "${XDG_RUNTIME_DIR}/yustat.tmux" -i 1
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
